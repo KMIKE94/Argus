@@ -76,3 +76,11 @@ Coverage reports are generated in the `target/site/jacoco` directory.
 ### Deploying & Running Argus
 
 Please [see the wiki](https://github.com/salesforce/Argus/wiki) for information on how to deploy, configure and run Argus.
+
+### Running Argus Web Services with docker-compose  
+
+- After performing the maven goals mentioned above, copy the newly created ``argus-webservices-{VERSION}.war`` file to the ``src/main/docker`` folder under the same module and rename the war to ``argusws.war``. 
+- Then you should build the docker image in ``src/main/docker`` with the following command: ``docker build -t argus/argus-web-services .``
+- Once this is complete you should then navigate back to the top-level of the project, where the argus-build.properties file is located.
+- Finally, run ``docker-compose up`` which should run all the mandatory services for the Argus Web Service to run.
+- Verify the running application by navigating to ``http://localhost:8080/argus/help`` and you should see a JSON response.
