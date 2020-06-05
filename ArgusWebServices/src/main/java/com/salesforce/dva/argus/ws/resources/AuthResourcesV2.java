@@ -84,15 +84,15 @@ public class AuthResourcesV2 extends AbstractResource {
     @Path("/login")
     public Response login(@Context HttpServletRequest req, final CredentialsDto creds) {
         try {
-            PrincipalUser user = authService.getUser(creds.getUsername(), creds.getPassword());
+//            PrincipalUser user = authService.getUser(creds.getUsername(), creds.getPassword());
 
-            if (user != null) {
-                JWTUtils.Tokens tokens = JWTUtils.generateTokens(user.getUserName());
-                req.setAttribute(AuthFilter.USER_ATTRIBUTE_NAME, user.getUserName());
+//            if (user != null) {
+                JWTUtils.Tokens tokens = JWTUtils.generateTokens(creds.getUsername());
+                req.setAttribute(AuthFilter.USER_ATTRIBUTE_NAME, creds.getUsername());
                 return Response.ok(tokens).build();
-            } else {
-                throw new WebApplicationException("User does not exist. Please provide valid credentials.", Response.Status.UNAUTHORIZED);
-            }
+//            } else {
+//                throw new WebApplicationException("User does not exist. Please provide valid credentials.", Response.Status.UNAUTHORIZED);
+//            }
         } catch (Exception ex) {
             throw new WebApplicationException("Exception: " + ex.getMessage(), Response.Status.UNAUTHORIZED);
         }

@@ -876,18 +876,18 @@ public class AbstractTSDBService extends DefaultService implements TSDBService {
 	public enum Property {
 
 		/** The TSDB read endpoint. */
-		TSD_ENDPOINT_READ("service.property.tsdb.endpoint.read", "http://localhost:4466,http://localhost:4467"),
+		TSD_ENDPOINT_READ("service.property.tsdb.endpoint.read", "http://localhost:4242,http://localhost:4242"),
 		/** The TSDB write endpoint. */
-		TSD_ENDPOINT_WRITE("service.property.tsdb.endpoint.write", "http://localhost:4477,http://localhost:4488"),
+		TSD_ENDPOINT_WRITE("service.property.tsdb.endpoint.write", "http://localhost:4242,http://localhost:4242"),
 		/** The TSDB connection timeout. */
 		TSD_ENDPOINT_CONNECTION_TIMEOUT("service.property.tsdb.endpoint.connection.timeout", "10000"),
 		/** The TSDB socket connection timeout. */
 		TSD_ENDPOINT_SOCKET_TIMEOUT("service.property.tsdb.endpoint.socket.timeout", "10000"),
 		/** The TSDB connection count. */
-		TSD_CONNECTION_COUNT("service.property.tsdb.connection.count", "2"),
+		TSD_CONNECTION_COUNT("service.property.tsdb.connection.count", "4"),
 		TSD_RETRY_COUNT("service.property.tsdb.retry.count", "3"),
 		/** The TSDB backup read endpoint. */
-		TSD_ENDPOINT_BACKUP_READ("service.property.tsdb.endpoint.backup.read", "http://localhost:4466,http://localhost:4467"),
+		TSD_ENDPOINT_BACKUP_READ("service.property.tsdb.endpoint.backup.read", "http://localhost:4242,http://localhost:4242"),
 		TSDB_READ_CONNECTION_REUSE_COUNT("service.property.tsdb.read.connection.reuse.count", "2000");
 
 		private final String _name;

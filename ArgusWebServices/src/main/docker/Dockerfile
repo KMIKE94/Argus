@@ -1,6 +1,5 @@
-FROM tomcat:7.0.73-jre8
+FROM tomcat:7.0.104-jdk8-corretto
 
-RUN apt-get -qq update -y && apt-get -qq install -y telnet net-tools less vim
+COPY argusws.war /usr/local/tomcat/webapps/argus.war
 
-ARG WAR
-COPY ${WAR} /usr/local/tomcat/webapps/argus.war
+EXPOSE 8080

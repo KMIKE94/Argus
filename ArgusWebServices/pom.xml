@@ -243,5 +243,9 @@
 		    <artifactId>jersey-hk2</artifactId>
 		    <version>2.26</version>
 		</dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -231,17 +231,17 @@ public class LDAPAuthService extends DefaultService implements AuthService {
     public enum Property {
 
         /** The LDAP endpoint. */
-        LDAP_ENDPOINT("service.property.auth.ldap.endpoint", "ldaps://ldaps.test.com:123"),
+        LDAP_ENDPOINT("service.property.auth.ldap.endpoint", "ldap://127.0.0.1:10389"),
         /** The LDAP search base. */
-        LDAP_SEARCHBASE("service.property.auth.ldap.searchbase", "YYYY"),
+        LDAP_SEARCHBASE("service.property.auth.ldap.searchbase", "ou=users,dc=wimpi,dc=net"),
         /** The distinguished name to be used for LDAP search. */
-        LDAP_SEARCHDN("service.property.auth.ldap.searchdn", "XXXX"),
+        LDAP_SEARCHDN("service.property.auth.ldap.searchdn", "uid=kwhite,ou=users,dc=wimpi,dc=net"),
         /** The password to bind to the LDAP service. */
-        LDAP_SEARCHPWD("service.property.auth.ldap.searchpwd", "SECRET"),
+        LDAP_SEARCHPWD("service.property.auth.ldap.searchpwd", "secret"),
         /** The LDAP authentication type. */
         LDAP_AUTHTYPE("service.property.auth.ldap.authtype", "simple"),
         /** The LDAP field which contains the principal user name. */
-        LDAP_USERNAMEFIELD("service.property.auth.ldap.usernamefield", "test.user");
+        LDAP_USERNAMEFIELD("service.property.auth.ldap.usernamefield", "test");
 
         private final String _name;
         private final String _defaultValue;
