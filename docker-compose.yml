@@ -13,35 +13,29 @@ services:
     ports:
       - "10389:10389"
       - "10636:10636"
-  zookeeper-server:
+  zookeeper:
     image: 'bitnami/zookeeper:latest'
+    hostname: zookeeper
     networks:
       - kafka-net
     ports:
       - '2181:2181'
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
-  kafka-server1:
+  kafka:
     image: 'bitnami/kafka:latest'
+    hostname: kafka
     networks:
       - kafka-net
     ports:
       - '9092:9092'
     environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper-server:2181
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
       - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
-      - zookeeper-server
-  kafka-server2:
-    image: 'bitnami/kafka:latest'
-    networks:
-      - kafka-net
+      - zookeeper
+  opentsdb:
+    image: petergrace/opentsdb-docker
     ports:
-      - '9093:9092'
-    environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper-server:2181
-      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9093
-      - ALLOW_PLAINTEXT_LISTENER=yes
-    depends_on:
-      - zookeeper-server
+      - '4242:4242'

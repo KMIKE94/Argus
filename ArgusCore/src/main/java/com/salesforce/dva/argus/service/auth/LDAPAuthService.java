@@ -235,7 +235,7 @@ public class LDAPAuthService extends DefaultService implements AuthService {
         /** The LDAP search base. */
         LDAP_SEARCHBASE("service.property.auth.ldap.searchbase", "ou=users,dc=wimpi,dc=net"),
         /** The distinguished name to be used for LDAP search. */
-        LDAP_SEARCHDN("service.property.auth.ldap.searchdn", "uid=kwhite,ou=users,dc=wimpi,dc=net"),
+        LDAP_SEARCHDN("service.property.auth.ldap.searchdn", "uid=test,ou=users,dc=wimpi,dc=net"),
         /** The password to bind to the LDAP service. */
         LDAP_SEARCHPWD("service.property.auth.ldap.searchpwd", "secret"),
         /** The LDAP authentication type. */
